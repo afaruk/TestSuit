@@ -1,0 +1,19 @@
+{
+  "name" : "İlk Test",
+  "runnerConfig" : {
+    "batchCount" : "2",
+    "loopCount" : "3",
+    "loopDelay" : "500"
+  },
+  "steps" : [
+    {
+      "name" : "ahmet",
+      "password" : "12345",
+      "type" : "BindOperation"
+    },
+    {
+      "cn" : "test",
+      "type" : "SearchOperation"
+    }
+  ]
+}
