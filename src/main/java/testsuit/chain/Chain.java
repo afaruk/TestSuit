@@ -4,7 +4,7 @@ import testsuit.operation.OperationType;
 
 public interface Chain {
 
-    void execute(ChainResult result);
+    void execute(ScenarioTestResult result);
 
     void setNextChain(Chain nextChain);
 

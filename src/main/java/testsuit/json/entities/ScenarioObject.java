@@ -1,18 +1,21 @@
 package testsuit.json.entities;
 
+import testsuit.chain.Chain;
+import testsuit.chain.ScenarioChainFactory;
+import testsuit.common.RunnerConfig;
+import testsuit.common.Scenario;
+
 import java.io.Serializable;
 import java.util.List;
 
 
-public class ScenarioObject implements Serializable {
+public class ScenarioObject implements Scenario, Serializable {
 
     private String name;
-    private RunnerConfig runnerConfig;
+    private RunnerConfigObject runnerConfig;
     private List<OperationConfigObject> steps;
 
-    public String getName() {
-        return name;
-    }
+    private Chain scenarioChain;
 
     public void setName(String name) {
         this.name = name;
@@ -22,15 +25,26 @@ public class ScenarioObject implements Serializable {
         this.steps = steps;
     }
 
-    public List<OperationConfigObject> getSteps() {
-        return steps;
-    }
-
-    public void setRunnerConfig(RunnerConfig runnerConfig) {
+    public void setRunnerConfig(RunnerConfigObject runnerConfig) {
         this.runnerConfig = runnerConfig;
     }
 
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
     public RunnerConfig getRunnerConfig() {
         return runnerConfig;
+    }
+
+    @Override
+    public Chain getScenarioChain() {
+        if (scenarioChain == null) {
+          scenarioChain = ScenarioChainFactory.INSTANCE.create(steps);
+        }
+
+        return scenarioChain;
     }
 }

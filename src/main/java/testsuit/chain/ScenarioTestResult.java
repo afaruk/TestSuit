@@ -7,12 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringJoiner;
 
-public class ChainResult extends AbstractResult {
+public class ScenarioTestResult extends AbstractResult {
 
     private List<OperationResult> operationResults = new ArrayList<>();
 
-    public ChainResult(int sequenceNum) {
-        super("Chain-" + sequenceNum);
+    public ScenarioTestResult(int threadSeqNumber) {
+        super((threadSeqNumber + 1) + ". Thread");
     }
 
     public void addOperationResult(OperationResult opResult) {
@@ -30,6 +30,5 @@ public class ChainResult extends AbstractResult {
         getOperationResults().stream().forEach(operationResult -> {
             operationResult.addReport(joiner);
         });
-        joiner.add("/////////////////////////////////////////////");
     }
 }

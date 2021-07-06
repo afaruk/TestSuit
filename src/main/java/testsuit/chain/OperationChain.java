@@ -1,6 +1,6 @@
 package testsuit.chain;
 
-import testsuit.operation.Operation;
+import testsuit.common.Operation;
 import testsuit.operation.OperationType;
 import testsuit.result.operations.OperationResult;
 
@@ -15,7 +15,7 @@ public class OperationChain implements Chain {
     }
 
     @Override
-    public void execute(ChainResult result) {
+    public void execute(ScenarioTestResult result) {
         OperationResult opResult = operation.execute(result);
         result.addOperationResult(opResult);
         if (nextChain != null) {

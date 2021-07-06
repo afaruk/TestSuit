@@ -1,7 +1,7 @@
 package testsuit.chain;
 
 import testsuit.json.entities.OperationConfigObject;
-import testsuit.operation.Operation;
+import testsuit.common.Operation;
 import testsuit.operation.OperationFactoryStrategy;
 
 import java.util.List;

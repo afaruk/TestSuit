@@ -1,5 +1,6 @@
 package testsuit.operation;
 
+import testsuit.common.Operation;
 import testsuit.json.entities.OperationConfigObject;
 import testsuit.operation.bind.BindOperationFactory;
 import testsuit.operation.search.SearchOperationFactory;

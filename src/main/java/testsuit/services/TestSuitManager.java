@@ -2,34 +2,33 @@ package testsuit.services;
 
 import testsuit.chain.Chain;
 import testsuit.chain.ScenarioChainFactory;
+import testsuit.common.Scenario;
 import testsuit.json.JSonFileOperation;
 import testsuit.json.entities.ScenarioObject;
 import testsuit.result.TestResult;
-import testsuit.runner.TestRunner;
+import testsuit.runner.TestRunnerImpl;
 
 import java.io.IOException;
 
 public class TestSuitManager {
 
     private JSonFileOperation jSonFileOperation;
-    private TestRunner testRunner;
+    private TestRunnerImpl testRunner;
 
     public TestSuitManager() {
         jSonFileOperation = new JSonFileOperation();
-        testRunner = new TestRunner();
+        testRunner = new TestRunnerImpl();
     }
 
     public TestResult runTest(String filePathName) throws IOException {
-        ScenarioObject jsonObject = createScenaroObject(filePathName);
-        Chain chain = ScenarioChainFactory.INSTANCE.create(jsonObject.getSteps());
-        return testRunner.run(jsonObject.getRunnerConfig(), chain);
+        Scenario scenario = createScenario(filePathName);
+        return testRunner.run(scenario);
     }
 
-    private ScenarioObject createScenaroObject(String filePathName) throws IOException {
-        ScenarioObject jsonObject = jSonFileOperation.createJsonObject(filePathName, ScenarioObject.class);
+    private Scenario createScenario(String filePathName) throws IOException {
+        var jsonObject = jSonFileOperation.createJsonObject(filePathName, ScenarioObject.class);
         jSonFileOperation.printJsonObject(jsonObject);
         return jsonObject;
     }
-
 
 }

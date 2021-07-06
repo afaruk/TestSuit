@@ -6,25 +6,25 @@ import java.util.StringJoiner;
 
 public class TestResult extends AbstractResult {
 
-    private List<BatchResult> batchResults = new ArrayList<>();
+    private List<LoopResult> loopResults = new ArrayList<>();
 
-    public TestResult() {
-        super("Test");
+    public TestResult(String name) {
+        super(name);
     }
 
-    public void addBatchResult(BatchResult batchResult) {
-        batchResults.add(batchResult);
+    public void addLoopResult(LoopResult loopResult) {
+        loopResults.add(loopResult);
     }
 
-    public List<BatchResult> getBatchResults() {
-        return batchResults;
+    public List<LoopResult> getLoopResults() {
+        return loopResults;
     }
 
     @Override
     public void addReport(StringJoiner joiner) {
         joiner.add("----------------------------------------------------------");
         addHeaderInfo(joiner);
-        getBatchResults().stream().forEach(batchResult -> {
+        getLoopResults().stream().forEach(batchResult -> {
             batchResult.addReport(joiner);
         });
         joiner.add("----------------------------------------------------------");

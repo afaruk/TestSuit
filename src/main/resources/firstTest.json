@@ -1,7 +1,7 @@
 {
   "name" : "İlk Test",
   "runnerConfig" : {
-    "batchCount" : "2",
+    "threadCountForSteps" : "2",
     "loopCount" : "3",
     "loopDelay" : "500"
   },

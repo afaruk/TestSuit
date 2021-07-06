@@ -1,8 +1,8 @@
 package testsuit.operation.bind;
 
-import testsuit.chain.ChainResult;
+import testsuit.chain.ScenarioTestResult;
 import testsuit.common.ThreadUtil;
-import testsuit.operation.Operation;
+import testsuit.common.Operation;
 import testsuit.operation.OperationType;
 import testsuit.result.operations.BindOperationResult;
 
@@ -20,7 +20,7 @@ public class BindOperation implements Operation<BindOperationResult> {
     }
 
     @Override
-    public BindOperationResult execute(ChainResult result) {
+    public BindOperationResult execute(ScenarioTestResult result) {
         BindOperationResult opResult = new BindOperationResult();
 
         opResult.setStartTime();

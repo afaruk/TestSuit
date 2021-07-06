@@ -1,7 +1,7 @@
 package testsuit.operation.search;
 
 import testsuit.json.entities.operations.SearchOperationConfig;
-import testsuit.operation.Operation;
+import testsuit.common.Operation;
 import testsuit.operation.OperationFactory;
 
 public class SearchOperationFactory implements OperationFactory<SearchOperationConfig> {

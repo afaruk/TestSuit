@@ -1,7 +1,7 @@
 package testsuit.operation.bind;
 
 import testsuit.json.entities.operations.BindOperationConfig;
-import testsuit.operation.Operation;
+import testsuit.common.Operation;
 import testsuit.operation.OperationFactory;
 
 public class BindOperationFactory implements OperationFactory<BindOperationConfig> {

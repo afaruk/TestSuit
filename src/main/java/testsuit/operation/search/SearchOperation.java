@@ -1,8 +1,8 @@
 package testsuit.operation.search;
 
-import testsuit.chain.ChainResult;
+import testsuit.chain.ScenarioTestResult;
 import testsuit.common.ThreadUtil;
-import testsuit.operation.Operation;
+import testsuit.common.Operation;
 import testsuit.operation.OperationType;
 import testsuit.result.operations.SearchOperationResult;
 
@@ -15,7 +15,7 @@ public class SearchOperation implements Operation {
     }
 
     @Override
-    public SearchOperationResult execute(ChainResult result) {
+    public SearchOperationResult execute(ScenarioTestResult result) {
         SearchOperationResult opResult = new SearchOperationResult();
         opResult.setStartTime();
 
