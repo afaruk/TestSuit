@@ -1,21 +1,23 @@
 package testsuit.runner;
 
-import testsuit.chain.Chain;
-import testsuit.chain.ScenarioTestResult;
+import testsuit.scenario.chain.Chain;
+import testsuit.scenario.chain.ScenarioParam;
+import testsuit.scenario.chain.ScenarioTestResult;
 
 public class ScenarioTask implements Runnable {
 
     private Chain scenarioChain;
-    private ScenarioTestResult scenarioTestResult;
+    private ScenarioParam scenarioParam;
 
-    ScenarioTask(Chain scenarioChain, ScenarioTestResult scenarioTestResult) {
+    ScenarioTask(Chain scenarioChain, ScenarioParam scenarioParam) {
         this.scenarioChain = scenarioChain;
-        this.scenarioTestResult = scenarioTestResult;
+        this.scenarioParam = scenarioParam;
     }
 
     public void run() {
+        var scenarioTestResult = scenarioParam.getScenarioTestResult();
         scenarioTestResult.setStartTime();
-        scenarioChain.execute(scenarioTestResult);
+        scenarioChain.execute(scenarioParam);
         scenarioTestResult.setFinishedTime();
     }
 }

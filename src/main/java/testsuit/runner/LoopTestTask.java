@@ -1,10 +1,10 @@
 package testsuit.runner;
 
-import testsuit.chain.Chain;
-import testsuit.chain.ScenarioTestResult;
-import testsuit.common.Scenario;
+import testsuit.scenario.chain.Chain;
+import testsuit.scenario.chain.ScenarioParam;
+import testsuit.scenario.chain.ScenarioTestResult;
+import testsuit.scenario.Scenario;
 import testsuit.common.ThreadUtil;
-import testsuit.result.LoopResult;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -45,7 +45,8 @@ public class LoopTestTask implements Runnable {
 
     private ScenarioTestResult runTask(Chain chain, ThreadPoolExecutor executor, int threadSeq) {
         var scenarioTestResult = new ScenarioTestResult(threadSeq);
-        var task = new ScenarioTask(chain, scenarioTestResult);
+        var param = new ScenarioParam(threadSeq, scenarioTestResult);
+        var task = new ScenarioTask(chain, param);
         executor.execute(task);
         return scenarioTestResult;
     }

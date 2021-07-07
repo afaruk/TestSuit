@@ -1,9 +1,6 @@
 package testsuit.runner;
 
-import testsuit.chain.Chain;
-import testsuit.common.RunnerConfig;
-import testsuit.common.Scenario;
-import testsuit.result.TestResult;
+import testsuit.scenario.Scenario;
 
 public interface TestRunner {
 

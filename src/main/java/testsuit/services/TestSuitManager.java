@@ -1,19 +1,18 @@
 package testsuit.services;
 
-import testsuit.chain.Chain;
-import testsuit.chain.ScenarioChainFactory;
-import testsuit.common.Scenario;
-import testsuit.json.JSonFileOperation;
-import testsuit.json.entities.ScenarioObject;
-import testsuit.result.TestResult;
-import testsuit.runner.TestRunnerImpl;
+import testsuit.scenario.Scenario;
+import testsuit.scenario.services.JSonFileOperation;
+import testsuit.scenario.json.ScenarioObject;
+import testsuit.runner.TestResult;
+import testsuit.runner.TestRunner;
+import testsuit.runner.services.TestRunnerImpl;
 
 import java.io.IOException;
 
 public class TestSuitManager {
 
     private JSonFileOperation jSonFileOperation;
-    private TestRunnerImpl testRunner;
+    private TestRunner testRunner;
 
     public TestSuitManager() {
         jSonFileOperation = new JSonFileOperation();

@@ -1,7 +1,6 @@
 package testsuit;
 
-import testsuit.result.Reporter;
-import testsuit.result.TestResult;
+import testsuit.report.Reporter;
 import testsuit.services.TestSuitManager;
 
 import java.io.IOException;
