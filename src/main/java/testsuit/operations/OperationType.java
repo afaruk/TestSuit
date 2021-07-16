@@ -2,8 +2,9 @@ package testsuit.operations;
 
 public enum OperationType {
 
-    BIND("Bind Operasyonu"),
-    SEARCH("Seach Operasyonu");
+    BIND("Bind Operation"),
+    SEARCH("Seach Operation"),
+    MODIFY("Modify Operation");
 
     private String name;
 

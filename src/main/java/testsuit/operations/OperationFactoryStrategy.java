@@ -1,5 +1,7 @@
 package testsuit.operations;
 
+import testsuit.operations.modify.ModifyOperationFactory;
+import testsuit.scenario.Configs;
 import testsuit.scenario.json.OperationConfigObject;
 import testsuit.operations.bind.BindOperationFactory;
 import testsuit.operations.search.SearchOperationFactory;
@@ -18,9 +20,10 @@ public enum OperationFactoryStrategy {
         operationFactories = new EnumMap<>(OperationType.class);
         operationFactories.put(OperationType.BIND, new BindOperationFactory());
         operationFactories.put(OperationType.SEARCH, new SearchOperationFactory());
+        operationFactories.put(OperationType.MODIFY, new ModifyOperationFactory());
     }
 
-    public Operation create(OperationConfigObject configObject, RunnerConfigObject runConfig) {
-        return operationFactories.get(configObject.getOperationName()).create(configObject, runConfig);
+    public Operation create(OperationConfigObject operationObject, Configs configs) {
+        return operationFactories.get(operationObject.getOperationName()).create(operationObject, configs);
     }
 }

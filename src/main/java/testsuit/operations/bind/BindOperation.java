@@ -1,10 +1,11 @@
 package testsuit.operations.bind;
 
+import testsuit.scenario.User;
 import testsuit.scenario.chain.ScenarioParam;
-import testsuit.scenario.chain.ScenarioTestResult;
 import testsuit.common.ThreadUtil;
 import testsuit.operations.Operation;
 import testsuit.operations.OperationType;
+import testsuit.scenario.json.UserObject;
 
 import java.util.List;
 import java.util.Random;

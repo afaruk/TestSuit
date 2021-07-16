@@ -1,5 +1,6 @@
 package testsuit.scenario.chain;
 
+import testsuit.scenario.Configs;
 import testsuit.scenario.json.OperationConfigObject;
 import testsuit.operations.Operation;
 import testsuit.operations.OperationFactoryStrategy;
@@ -11,11 +12,11 @@ public enum ScenarioChainFactory {
 
     INSTANCE;
 
-    public Chain create(List<OperationConfigObject> steps, RunnerConfigObject runConfig) {
+    public Chain create(List<OperationConfigObject> steps, Configs configs) {
         System.out.println("Senaryo zinciri oluşturma işlemi başlatıldı.");
         ChainBuilder chainBuilder = new ChainBuilder();
-        steps.stream().forEach(operationConfigObject -> {
-            Chain chain = createChain(operationConfigObject, runConfig);
+        steps.stream().forEach(operationObject -> {
+            Chain chain = createChain(operationObject, configs);
             chainBuilder.addChain(chain);
             System.out.println(chain.getOperationType() + " operasyonu zincire eklendi");
         });
@@ -23,8 +24,8 @@ public enum ScenarioChainFactory {
         return chainBuilder.build();
     }
 
-    private Chain createChain(OperationConfigObject operationConfigObject, RunnerConfigObject runConfig) {
-        Operation operation = OperationFactoryStrategy.INSTANCE.create(operationConfigObject, runConfig);
+    private Chain createChain(OperationConfigObject operationObject, Configs configs) {
+        Operation operation = OperationFactoryStrategy.INSTANCE.create(operationObject, configs);
         return new OperationChain(operation);
     }
 }

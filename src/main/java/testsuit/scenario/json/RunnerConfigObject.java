@@ -1,5 +1,7 @@
 package testsuit.scenario.json;
 
+import testsuit.scenario.RunnerConfig;
+
 public class RunnerConfigObject implements JSonObject, RunnerConfig {
 
     private int threadCountForSteps;

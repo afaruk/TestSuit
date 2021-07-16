@@ -29,7 +29,7 @@ public class TestRunnerImpl implements TestRunner {
     }
 
     private void runTestUntilLoopCount(Scenario scenario, TestResult testResult, ThreadPoolExecutor executor) {
-        var runnerConfig = scenario.getRunnerConfig();
+        var runnerConfig = scenario.getConfigs().getRunnerConfig();
         IntStream.range(0, runnerConfig.getLoopCount()).forEach(loopIndex -> {
             var loopResult = new LoopResult(loopIndex);
             var loopTestTask = new LoopTestTask(scenario, loopResult);

@@ -3,6 +3,7 @@ package testsuit.scenario.json;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import testsuit.operations.bind.BindOperationConfig;
+import testsuit.operations.modify.ModifyOperationConfig;
 import testsuit.operations.search.SearchOperationConfig;
 import testsuit.operations.OperationType;
 
@@ -14,6 +15,7 @@ import testsuit.operations.OperationType;
 @JsonSubTypes({
         @JsonSubTypes.Type(value = BindOperationConfig.class, name = "BindOperation"),
         @JsonSubTypes.Type(value = SearchOperationConfig.class, name = "SearchOperation"),
+        @JsonSubTypes.Type(value = ModifyOperationConfig.class, name = "ModifyOperation")
 })
 public interface OperationConfigObject extends JSonObject {
 

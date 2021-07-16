@@ -1,8 +1,8 @@
-package testsuit.operations.bind;
+package testsuit.scenario.json;
 
-import testsuit.scenario.json.JSonObject;
+import testsuit.scenario.User;
 
-public class User implements JSonObject {
+public class UserObject implements JSonObject, User {
 
     private String name;
 
@@ -16,10 +16,12 @@ public class User implements JSonObject {
         this.password = password;
     }
 
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
     public String getPassword() {
         return password;
     }

@@ -1,6 +1,6 @@
 package testsuit.scenario.json;
 
-import testsuit.scenario.Scenario;
+import testsuit.scenario.*;
 import testsuit.scenario.chain.Chain;
 import testsuit.scenario.chain.ScenarioChainFactory;
 
@@ -11,7 +11,7 @@ import java.util.List;
 public class ScenarioObject implements Scenario, Serializable {
 
     private String name;
-    private RunnerConfigObject runnerConfig;
+    private Configs configs;
     private List<OperationConfigObject> steps;
 
     private Chain scenarioChain;
@@ -24,8 +24,12 @@ public class ScenarioObject implements Scenario, Serializable {
         this.steps = steps;
     }
 
-    public void setRunnerConfig(RunnerConfigObject runnerConfig) {
-        this.runnerConfig = runnerConfig;
+    public void setConfigs(ConfigObjects configs) {
+        this.configs = configs;
+    }
+
+    public List<OperationConfigObject> getSteps() {
+        return steps;
     }
 
     @Override
@@ -34,14 +38,14 @@ public class ScenarioObject implements Scenario, Serializable {
     }
 
     @Override
-    public RunnerConfig getRunnerConfig() {
-        return runnerConfig;
+    public Configs getConfigs() {
+        return configs;
     }
 
     @Override
     public Chain getScenarioChain() {
         if (scenarioChain == null) {
-          scenarioChain = ScenarioChainFactory.INSTANCE.create(steps, runnerConfig);
+          scenarioChain = ScenarioChainFactory.INSTANCE.create(steps, configs);
         }
 
         return scenarioChain;

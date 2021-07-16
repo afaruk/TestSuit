@@ -19,7 +19,7 @@ public class LoopTestTask implements Runnable {
     public LoopTestTask(Scenario scenario, LoopResult loopResult) {
 
         this.chain = scenario.getScenarioChain();
-        this.threadCount = scenario.getRunnerConfig().getThreadCountForSteps();
+        this.threadCount = scenario.getConfigs().getRunnerConfig().getThreadCountForSteps();
         this.loopResult = loopResult;
     }
 

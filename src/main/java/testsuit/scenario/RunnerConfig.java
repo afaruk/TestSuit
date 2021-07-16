@@ -1,4 +1,4 @@
-package testsuit.scenario.json;
+package testsuit.scenario;
 
 public interface RunnerConfig {
 
