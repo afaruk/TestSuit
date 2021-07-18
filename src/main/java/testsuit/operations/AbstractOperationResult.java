@@ -4,9 +4,10 @@ import testsuit.common.AbstractResult;
 
 import java.util.StringJoiner;
 
-public abstract class AbstractOperationResult extends AbstractResult implements OperationResult {
+public abstract class AbstractOperationResult<T> extends AbstractResult implements OperationResult {
 
     private OperationType operationType;
+    private T result;
 
     public AbstractOperationResult(OperationType operationType) {
         super(operationType.getName());
@@ -20,9 +21,11 @@ public abstract class AbstractOperationResult extends AbstractResult implements 
 
     @Override
     public void addReport(StringJoiner joiner) {
-        joiner.add("==========================================");
+        joiner.add(" ");
         addHeaderInfo(joiner);
-        joiner.add("==========================================");
+        addOperationReport(joiner);
     }
+
+    protected abstract void addOperationReport(StringJoiner joiner);
 
 }

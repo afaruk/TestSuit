@@ -40,7 +40,7 @@ public class ScenarioTestResult extends AbstractResult {
 
     @Override
     public void addReport(StringJoiner joiner) {
-        joiner.add("////////////////////////////////////////////");
+        joiner.add(" ");
         addHeaderInfo(joiner);
         getOperationResults().stream().forEach(operationResult -> {
             operationResult.addReport(joiner);

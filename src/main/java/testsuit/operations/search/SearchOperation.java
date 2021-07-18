@@ -24,7 +24,6 @@ public class SearchOperation implements Operation {
         opResult.setStartTime();
 
         System.out.println("Aranacak cn:" + cn);
-        System.out.println("Bind User:" + ((BindOperationResult) operationResults.get(0)).getBindedUser());
         ThreadUtil.sleep(100);
 
         opResult.setFinishedTime();

@@ -1,0 +1,33 @@
+{
+  "name" : "Bind test",
+  "configs" : {
+    "runnerConfig" : {
+      "threadCountForSteps" : "4",
+      "loopCount" : "1",
+      "loopDelay" : "500"
+    },
+    "serverConfig" : {
+      "host" : "0.0.0.0",
+      "port" : 10389
+    }
+  },
+  "steps" : [
+    {
+      "users" : [
+        {
+          "name" : "cn=ahmet faruk yazi,ou=Users,dc=example,dc=com",
+          "password" : "12345"
+        },
+        {
+          "name" : "cn=ahmet,ou=Users,dc=example,dc=com",
+          "password" : "12345"
+        },
+        {
+          "name" : "cn=faruk,ou=Users,dc=example,dc=com",
+          "password" : "12345"
+        }
+      ],
+      "type" : "BindOperation"
+    }
+  ]
+}

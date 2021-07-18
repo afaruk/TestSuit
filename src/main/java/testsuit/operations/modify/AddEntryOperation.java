@@ -20,9 +20,9 @@ public class AddEntryOperation implements Operation<ModifyOperationResult> {
     @Override
     public ModifyOperationResult execute(ScenarioParam param) {
 
-        bindUser();
-        addEntry();
-        unbindUser();
+//        bindUser();
+//        addEntry();
+//        unbindUser();
 
         return new ModifyOperationResult();
     }

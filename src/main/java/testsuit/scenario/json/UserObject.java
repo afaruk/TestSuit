@@ -25,4 +25,12 @@ public class UserObject implements JSonObject, User {
     public String getPassword() {
         return password;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }

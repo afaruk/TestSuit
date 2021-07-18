@@ -23,7 +23,7 @@ public class BindOperationFactory implements OperationFactory<BindOperationConfi
                 users =  createUserListAccordingToThreadNumber(user, configs.getRunnerConfig().getThreadCountForSteps());
             }
         }
-        return new BindOperation(users);
+        return new BindOperation(users, configs.getServerConfig());
     }
 
     private List<User> createUserListAccordingToThreadNumber(User user, int threadCount) {

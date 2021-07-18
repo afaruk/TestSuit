@@ -25,7 +25,7 @@ public class LoopResult extends AbstractResult {
 
     @Override
     public void addReport(StringJoiner joiner) {
-        joiner.add("###########################################");
+        joiner.add(" ");
         addHeaderInfo(joiner);
         getScenarioTestResults().stream().forEach(chainResult -> {
             chainResult.addReport(joiner);

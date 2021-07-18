@@ -24,11 +24,9 @@ public class TestResult extends AbstractResult {
 
     @Override
     public void addReport(StringJoiner joiner) {
-        joiner.add("----------------------------------------------------------");
         addHeaderInfo(joiner);
         getLoopResults().stream().forEach(batchResult -> {
             batchResult.addReport(joiner);
         });
-        joiner.add("----------------------------------------------------------");
     }
 }

@@ -18,11 +18,16 @@
   "steps" : [
     {
       "modificationType" : "ADD",
+      "dn" : "cn=Micha Kops,ou=Users,dc=example,dc=com",
       "attributes" : [
-        "dn: ou=Groups,dc=example,dc=com",
-        "objectClass: organizationalUnit",
+        "objectClass: inetOrgPerson",
+        "objectClass: organizationalPerson",
+        "objectClass: person",
         "objectClass: top",
-        "ou: Groups"
+        "cn: Micha Kops",
+        "sn: Kops",
+        "uid: mkops",
+        "userPassword: abcdefg"
       ],
       "type" : "ModifyOperation"
     }
