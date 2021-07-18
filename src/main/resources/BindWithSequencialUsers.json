@@ -2,7 +2,7 @@
   "name" : "Bind test",
   "configs" : {
     "runnerConfig" : {
-      "threadCountForSteps" : "15",
+      "threadCountForSteps" : "17",
       "loopCount" : "1",
       "loopDelay" : "500"
     },

@@ -2,7 +2,7 @@
   "name" : "Bind test",
   "configs" : {
     "runnerConfig" : {
-      "threadCountForSteps" : "15",
+      "threadCountForSteps" : "25",
       "loopCount" : "1",
       "loopDelay" : "500"
     },
@@ -15,7 +15,7 @@
     {
       "users" : [
         {
-          "name" : "cn=testuser#1#15,ou=Users,dc=example,dc=com",
+          "name" : "cn=testuser#[5,15],ou=Users,dc=example,dc=com",
           "password" : "12345"
         }
       ],
