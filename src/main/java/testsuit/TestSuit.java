@@ -15,8 +15,9 @@ public class TestSuit {
         var scenarioFilePaths = new ArrayList<String>();
 //        scenarioFilePaths.add("src/main/resources/BindWithOneUser.json");
 //        scenarioFilePaths.add("src/main/resources/BindWithMultiUser.json");
-        scenarioFilePaths.add("src/main/resources/BindWithSequencialUsers.json");
-        scenarioFilePaths.add("src/main/resources/BindWithRestirictedSequencialUsers.json");
+//        scenarioFilePaths.add("src/main/resources/BindWithSequencialUsers.json");
+//        scenarioFilePaths.add("src/main/resources/BindWithRestrictedSequencialUsers.json");
+        scenarioFilePaths.add("src/main/resources/AddOneEntryWithOneUser.json");
         scenarioFilePaths.stream().forEach(path -> {
             TestResult result;
             try {

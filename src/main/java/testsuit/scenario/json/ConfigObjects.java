@@ -10,7 +10,6 @@ public class ConfigObjects implements JSonObject, Configs {
 
     private RunnerConfigObject runnerConfig;
     private ServerConfigObject serverConfig;
-    private AuthorizedUserObject authorizedUser;
 
     public void setRunnerConfig(RunnerConfigObject runnerConfig) {
         this.runnerConfig = runnerConfig;
@@ -18,10 +17,6 @@ public class ConfigObjects implements JSonObject, Configs {
 
     public void setServerConfig(ServerConfigObject serverConfig) {
         this.serverConfig = serverConfig;
-    }
-
-    public void setAuthorizedUser(AuthorizedUserObject authorizedUser) {
-        this.authorizedUser = authorizedUser;
     }
 
     @Override
@@ -34,8 +29,4 @@ public class ConfigObjects implements JSonObject, Configs {
         return serverConfig;
     }
 
-    @Override
-    public User getAuthorizedUser() {
-        return authorizedUser;
-    }
 }

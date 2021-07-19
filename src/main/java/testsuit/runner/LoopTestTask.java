@@ -26,17 +26,17 @@ public class LoopTestTask implements Runnable {
     @Override
     public void run() {
         loopResult.setStartTime();
-        runLoopTask(chain, loopResult);
+        runLoopTask(chain);
         loopResult.setFinishedTime();
     }
 
-    private void runLoopTask(Chain chain, LoopResult loopResult) {
+    private void runLoopTask(Chain chain) {
         var executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(threadCount);
-        runScenarioTaskWithSeparateThreads(chain, executor, threadCount, loopResult);
+        runScenarioTaskWithSeparateThreads(chain, executor, threadCount);
         ThreadUtil.waitAllThread(executor);
     }
 
-    private void runScenarioTaskWithSeparateThreads(Chain chain, ThreadPoolExecutor executor, int threadCount, LoopResult batchResult) {
+    private void runScenarioTaskWithSeparateThreads(Chain chain, ThreadPoolExecutor executor, int threadCount) {
         IntStream.range(0, threadCount).forEach(threadSeq -> {
             var scenarioTestResult = runTask(chain, executor, threadSeq);
             loopResult.addScenarioTestResult(scenarioTestResult);

@@ -23,7 +23,7 @@ public class BindOperation implements Operation<BindOperationResult> {
 
     @Override
     public BindOperationResult execute(ScenarioParam param) {
-        var opResult = new BindOperationResult();
+        var opResult = new BindOperationResult(param.getThreadSeqNum());
         User user = selectUser(param);
         opResult.setUser(user);
 

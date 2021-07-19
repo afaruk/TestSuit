@@ -43,9 +43,7 @@ public class BindOperationFactory implements OperationFactory<BindOperationConfi
     }
 
     private List<User> createSequentialUserList(User user, int threadCount) {
-
-        String name = user.getName();
-        Matcher matcher = pattern.matcher(name);
+        Matcher matcher = pattern.matcher(user.getName());
         if (matcher.find()) {
             return createRestrictedSequentialUserList(user, matcher);
         } else {

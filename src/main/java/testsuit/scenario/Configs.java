@@ -5,7 +5,4 @@ public interface Configs {
     RunnerConfig getRunnerConfig();
 
     ServerConfig getServerConfig();
-
-    User getAuthorizedUser();
-
 }

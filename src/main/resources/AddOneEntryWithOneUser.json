@@ -2,32 +2,36 @@
   "name" : "Add Remove Entry Test",
   "configs" : {
     "runnerConfig" : {
-      "threadCountForSteps" : "2",
-      "loopCount" : "3",
+      "threadCountForSteps" : "1",
+      "loopCount" : "1",
       "loopDelay" : "500"
     },
     "serverConfig" : {
       "host" : "0.0.0.0",
       "port" : 10389
-    },
-    "authorizedUser" : {
-      "name" : "uid=admin,ou=system",
-      "password": "secret"
     }
   },
   "steps" : [
     {
+      "users" : [
+        {
+          "name" : "cn=ahmet faruk yazi,ou=Users,dc=example,dc=com",
+          "password" : "12345"
+        }
+      ],
+      "type" : "BindOperation"
+    },
+    {
       "modificationType" : "ADD",
-      "dn" : "cn=Micha Kops,ou=Users,dc=example,dc=com",
+      "dn" : "cn=testmodifyuser1, ou=Users,dc=example,dc=com",
       "attributes" : [
         "objectClass: inetOrgPerson",
         "objectClass: organizationalPerson",
         "objectClass: person",
         "objectClass: top",
-        "cn: Micha Kops",
-        "sn: Kops",
-        "uid: mkops",
-        "userPassword: abcdefg"
+        "cn: testmodifyuser",
+        "sn: testmodifyuser",
+        "userPassword: 12345"
       ],
       "type" : "ModifyOperation"
     }

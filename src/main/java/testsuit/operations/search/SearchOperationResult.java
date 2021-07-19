@@ -7,8 +7,8 @@ import java.util.StringJoiner;
 
 public class SearchOperationResult extends AbstractOperationResult {
 
-    public SearchOperationResult() {
-        super(OperationType.SEARCH);
+    public SearchOperationResult(int sequenceNum) {
+        super(OperationType.SEARCH, sequenceNum);
     }
 
     @Override

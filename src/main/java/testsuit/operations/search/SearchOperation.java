@@ -20,7 +20,7 @@ public class SearchOperation implements Operation {
 
         var operationResults = param.getScenarioTestResult().getOperationResults(OperationType.BIND);
 
-        SearchOperationResult opResult = new SearchOperationResult();
+        SearchOperationResult opResult = new SearchOperationResult(param.getThreadSeqNum());
         opResult.setStartTime();
 
         System.out.println("Aranacak cn:" + cn);

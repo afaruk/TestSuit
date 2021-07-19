@@ -9,37 +9,35 @@ import testsuit.scenario.User;
 
 import java.util.StringJoiner;
 
-public class BindOperationResult extends AbstractOperationResult {
+public class BindOperationResult extends AbstractOperationResult<BindResult> {
 
-
-    private BindResult bindResult;
     private LDAPConnection connection;
     private User user;
 
-    public BindOperationResult() {
-        super(OperationType.BIND);
+    public BindOperationResult(int sequenceNum) {
+        super(OperationType.BIND, sequenceNum);
     }
 
     public void setUser(User user) {
         this.user = user;
     }
 
-    public void setResult(BindResult bindResult) {
-        this.bindResult = bindResult;
-    }
-
     public void setConnection(LDAPConnection connection) {
         this.connection = connection;
+    }
+
+    public LDAPConnection getConnection() {
+        return connection;
     }
 
     @Override
     protected void addOperationReport(StringJoiner joiner) {
         joiner.add(user.toString());
-        if (bindResult.getResultCode().equals(ResultCode.SUCCESS)) {
+        if (getResult().getResultCode().equals(ResultCode.SUCCESS)) {
             joiner.add("Status: SUCCESS");
         } else {
             joiner.add("Status: FAILED");
-            joiner.add("Error Code:" + bindResult.getResultCode());
+            joiner.add("Error Code:" + getResult().getResultCode());
         }
     }
 }
